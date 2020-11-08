@@ -80,22 +80,22 @@ import './App.css'
     if([e.target.id] == "size"){
       this.setState({blur :Math.ceil(e.target.value/5)});
       this.setState({distance :Math.ceil(e.target.value/10)});
-      this.distanceUpdate();
+      this.distanceUpdate(this.state.distance);
 
     }
     if([e.target.id] == "intensity"){
       this.intensity(this.state.background);
     }
     if([e.target.id] == "distance"){
-      this.distanceUpdate();
+      this.distanceUpdate(e.target.value);
     }
 
   }
-  distanceUpdate =()=>{
+  distanceUpdate =(distance)=>{
     const domId = document.getElementById(this.state.active)
-      this.setState({positionX:this.state.distance,positionY:this.state.distance,positionXOpposite:this.state.distance,
-        positionYOpposite:this.state.distance,blur:(this.state.distance*2)})
-      this.setState({[domId.getAttribute('light')]:~this.state.distance+1,[domId.getAttribute('light2')]:~this.state.distance+1})
+      this.setState({positionX:distance,positionY:distance,positionXOpposite:distance,
+        positionYOpposite:distance,blur:(distance*2)})
+      this.setState({[domId.getAttribute('light')]:~distance+1,[domId.getAttribute('light2')]:~distance+1})
   }
 
   lightChange =(e) =>{
@@ -157,9 +157,9 @@ import './App.css'
               <label>Distance:</label>
               <input id="distance" name="distance" type="range" value={this.state.distance}  max="50" min={this.state.size < 50 ? Math.ceil(this.state.size/10) : 5 } step="1"  onChange={this.rangeChange} />
             </div>
-            <div className="row">
+            <div className="row ">
               <label>Intensity:</label>
-              <input id="intensity" name="intensity" type="range" value={this.state.intensity}  max="60" min="1" step="1"  onChange={this.rangeChange} />
+              <input id="intensity" name="intensity" type="range" value={this.state.intensity} rValue={(this.state.intensity*0.01).toFixed(2)}  max="60" min="1" step="1"  onChange={this.rangeChange} />
             </div>
             <div className="row">
               <label>Blur:</label>

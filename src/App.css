@@ -193,6 +193,19 @@ input[type=range]:active:after, input[type=range]:focus-within:after, input[type
   background: var(--color);
 }
 
+input[id=intensity]:active:after, input[id=intensity]:focus-within:after, input[id=intensity]:focus:after, input[id=intensity]:hover:after {
+  content: attr(rvalue);
+  position: absolute;
+  left: 105%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: var(--bgColor);
+  border-radius: 3px;
+  padding: 10px;
+  background: var(--color);
+}
+
 .codeBlock{
   position: relative;
   font-size: 10px;
@@ -331,6 +344,8 @@ input[type=range]:active:after, input[type=range]:focus-within:after, input[type
     padding: 7px;
     background: var(--color);
   }
+  input[id=intensity]:active:after, input[id=intensity]:focus-within:after, input[id=intensity]:focus:after, input[id=intensity]:hover:after {
+    content: attr(rvalue);}
 
 }
 @media screen and (max-width: 480px) {
@@ -397,6 +412,8 @@ input[type=range]:active:after, input[type=range]:focus-within:after, input[type
     padding: 7px;
     background: var(--color);
   }
+  input[id=intensity]:active:after, input[id=intensity]:focus-within:after, input[id=intensity]:focus:after, input[id=intensity]:hover:after {
+    content: attr(rvalue);}
 }
 
 @media screen and (max-width: 600px) {
@@ -464,6 +481,8 @@ input[type=range]:active:after, input[type=range]:focus-within:after, input[type
     padding: 7px;
     background: var(--color);
   }
+  input[id=intensity]:active:after, input[id=intensity]:focus-within:after, input[id=intensity]:focus:after, input[id=intensity]:hover:after {
+    content: attr(rvalue);}
 }
 @media screen and (max-width: 768px) {
   *{
@@ -530,4 +549,6 @@ input[type=range]:active:after, input[type=range]:focus-within:after, input[type
     padding: 7px;
     background: var(--color);
   }
+  input[id=intensity]:active:after, input[id=intensity]:focus-within:after, input[id=intensity]:focus:after, input[id=intensity]:hover:after {
+    content: attr(rvalue);}
 }
